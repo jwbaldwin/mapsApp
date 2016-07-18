@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- Declares meanMapApp as the starting Angular module -->
+<html class="no-js" ng-app="meanMapApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Master MEAN Map</title>
+        <meta name="description" content="An example demonstrating Google Map integration with MEAN Apps">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS -->
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="css/login.css"/>
+        <link rel="stylesheet" href="css/map.css"/>
+
+        <!-- Google Maps API & Locations Library -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrn605l7RPadiwdzsOlRw9O28lxfYBJ6s&libraries=places"></script>
+        <!-- Modernizr -->
+        <script src="../bower_components/modernizr/bin/modernizr"></script>
+        <!-- JS Source -->
+        <script src="../bower_components/jquery/jquery.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-route/angular-route.js"></script>
+        <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+        <!-- Angular Source -->
+        <script src="js/app.js"></script>
+        <script src="js/addCtrl.js"></script>
+        <script src="js/gservice.js"></script>
+
+    </head>
+    <!-- Removed ng-controller. Now this will be handled in app.js -->
+    <body>
+        <div class="container">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <!-- Links to the two menu views included -->
+                    <li active><a href="/#/login">Log In</a></li>
+                    <li disabled><a href="/#/join">Join the Fun</a></li>
+                    <li disabled><a href="/#/find">Plan your Day</a></li>
+                </ul>
+                <h3 class="text-muted">The Master MEAN MapApp</h3>
+            </div>
+            <!-- Views -->
+            <div class="row content">
+                <!-- Page view - Now Handled by ng-view -->
+                <div ng-view></div>
+            </div>
+            <hr/>
+            <!-- Footer -->
+            <div class="footer">
+                <p class="text-center"><span class="glyphicon glyphicon-check"></span> Created by James Baldwin</p>
+            </div>
+        </div>
+    </body>
+</html>

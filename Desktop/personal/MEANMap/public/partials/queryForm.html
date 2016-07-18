@@ -1,0 +1,100 @@
+<!-- Find Teammates (Query) Form -->
+<!-- The Map -->
+<div class="col-md-7">
+    <div id="map" style="width:645px; height:645px"></div>
+</div>
+<div class="col-md-5">
+
+    <!-- Creates Main Panel -->
+    <div class="panel panel-default">
+
+        <!-- Panel Title -->
+        <div class="panel-heading">
+            <h2 class="panel-title text-center">Find Teammates! (Map Query) <span class="glyphicon glyphicon-search"></span></h2>
+        </div>
+
+        <!-- Panel Body -->
+        <div class="panel-body">
+
+            <!-- Creates Form -->
+            <form name ="queryForm">
+
+                <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+                <div class="form-group">
+                    <label for="latitude">Your Latitude</label>
+                    <input type="text" class="form-control" id="latitude" placeholder="39.5" ng-model="formData.latitude" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="longitude">Your Longitude</label>
+                    <input type="text" class="form-control" id="longitude" placeholder="-98.35" ng-model="formData.longitude" readonly>
+                </div>
+                <label class="radio control-label">Mode of Transportation</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="radiocar" value="Car" ng-model="formData.transport">
+                        Car
+                    </label>
+                </div>
+                <div class="radio" required>
+                    <label>
+                        <input type="radio" name="optionsRadios" id="radiowalk" value="Walking" ng-model="formData.transport">
+                        Walking
+                    </label>
+                </div>
+                <div class="radio" required>
+                    <label>
+                        <input type="radio" name="optionsRadios" id="radiobus" value="Bus" ng-model="formData.transport">
+                        Bus
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="radioother" value="What's it to ya?" ng-model="formData.transport">
+                        Other...kayak, camel, unicycle...etc.
+                    </label>
+                </div>
+
+                <!-- Note ng-true-value which translates check values into explicit gender strings -->
+                <label>First Actvity</label>
+                <div class="form-group">
+                    <select class="form-control">
+                        <option selected="" disabled="">
+                            Select an Activity!
+                        </option>
+                        <option id="food">Food</option>
+                        <option id="shops">Shops</option>
+                        <option id="places">Places</option>
+                        <option id="locsandthigns">Locations and Things</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="minage">Min. Age</label>
+                    <input type="number" class="form-control" id="minage" placeholder="5" ng-model="formData.minage">
+                </div>
+                <div class="form-group">
+                    <label for="maxage">Max Age</label>
+                    <input type="number" class="form-control" id="maxage" placeholder="80" ng-model="formData.maxage">
+                </div>
+                <div class="form-group">
+                    <label for="favlang">Favorite Language</label>
+                    <input type="text" class="form-control" id="favlang" placeholder="Fortran" ng-model="formData.favlang">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="verified" id="radiomale" value="True" ng-model="formData.verified"> <strong>Include Only HTML5 Verified Locations?</strong>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
+                <button type="submit" class="btn btn-danger btn-block" ng-click="queryUsers()">Search</button>
+            </form>
+        </div>
+
+        <!-- Footer panel for displaying count. Note how it will only display if queryCount is greater than 0 -->
+        <div ng-show="queryCount>0" class="panel-footer">
+            <p class="text-center">Hot Dang! We Found {{queryCount}} Teammates.</p>
+        </div>
+    </div>
+</div>

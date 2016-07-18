@@ -1,0 +1,13 @@
+input[type="text"] {
+    margin-bottom: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 46px;
+}
+
+input[type="password"] {
+    margin-bottom: 30px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    height: 46px;
+}
